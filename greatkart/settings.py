@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+# from django.conf import settings
+# print("EMAIL BACKEND:", settings.EMAIL_BACKEND)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,3 +138,19 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+from django.contrib.messages import constants as messages 
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True  # Changed from EMAIL_HOST_TLS to EMAIL_USE_TLS
+EMAIL_HOST_USER = 'luckyraghu9032@gmail.com'
+EMAIL_HOST_PASSWORD = 'kppxvgvuafghytym'
+DEFAULT_FROM_EMAIL = 'luckyraghu9032@gmail.com'
+
