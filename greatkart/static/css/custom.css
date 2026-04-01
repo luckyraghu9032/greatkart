@@ -1,0 +1,53 @@
+
+/* .rate > input{
+    display: none;
+} */
+
+.rate > input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.rate{
+    display: inline-block;
+    border: 0;
+}
+.rate > label {
+    float: right;
+
+}
+
+/* Base Star Styling */
+.rate > label:before {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: FontAwesome;
+    content: "\f005"; /* Full star */
+    margin: 0;
+    padding: 0.3rem .2rem;
+    cursor: pointer;
+}
+
+/* Half Star Logic */
+.rate .half:before {
+    content: "\f089"; /* Half star code */
+    position: absolute;
+    padding-right: 0;
+}
+
+
+/* Color logic: Light up stars to the left of the hovered/checked star */
+input:checked ~ label, label:hover ~ label {
+    color: #ffb503;  
+}
+
+/* Hover effect on current star and previous stars */
+input:checked + label:hover, input:checked ~ label:hover, label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label {
+    color: #ffb503;
+}
+
+
+.rating-star{
+        color: #ffb503 !important;
+
+}
