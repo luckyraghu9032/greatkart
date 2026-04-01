@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,5 @@ EMAIL_HOST_USER = 'luckyraghu9032@gmail.com'
 EMAIL_HOST_PASSWORD = 'kppxvgvuafghytym'
 DEFAULT_FROM_EMAIL = 'luckyraghu9032@gmail.com'
 
+RAZORPAY_KEY_ID = "your_key_id"
+RAZORPAY_KEY_SECRET = "your_key_secret"
